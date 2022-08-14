@@ -6,7 +6,7 @@ int main(void)
 {
     int aux;
 
-    char hello[] = "";
+    char hello[] = "ola senhores";
     aux =   ft_strlen(hello);
     printf("return: %d", aux);
 }

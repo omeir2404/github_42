@@ -1,19 +1,33 @@
 #include <stdio.h>
+#include <string.h>
 
-char *ft_strncpy(char *dest, char *src, unsigned int n);
+char	*ft_strncpy(char *dest, char *src, unsigned int n);
+/*{
+	unsigned int index;
 
-int main(void)
+	index = 0;
+	while (index < n && src[index] != '\0')
+	{
+		dest[index] = src[index];
+		index++;
+	}
+	while (index < n)
+	{
+		dest[index] = '\0';
+		index++;
+	}
+	return (dest);
+}*/
+
+int		main(void)
 {
-    char dest[] = "olaaa";
-    char src[]= "hello";
-    int size = 10;
-    int count = 0;
-    ft_strncpy(dest, src, size);
+	char *src;
+	char dest[20];
 
-    while(count < size)
-    {
-        printf("%c", dest[count]);
-        count++;
-    }
-    return(0);
+	src = "Hello World";
+	printf("base   : %s\n", src);
+	strncpy(dest, src, 8);
+	printf("cpy    : %s\n", dest);
+	ft_strncpy(dest, src, 8);
+	printf("ft_cpy : %s\n", dest);
 }

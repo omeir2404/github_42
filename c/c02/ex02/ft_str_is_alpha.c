@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 20:08:36 by oharoon           #+#    #+#             */
-/*   Updated: 2022/08/11 22:13:12 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/08/14 16:45:28 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_str_is_alpha(char *str)
 		return (1);
 	while (str[c] != '\0')
 	{	
-		if (str[c] < 65 || (str[c] > 90 && str[c] < 97 || str[c] > 122))
+		if (str[c] < 65 || (str[c] > 90 && str[c] < 97) || str[c] > 122)
 		{
 			return (0);
 		}

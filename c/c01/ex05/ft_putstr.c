@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 17:28:34 by oharoon           #+#    #+#             */
-/*   Updated: 2022/08/10 17:28:52 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/08/13 12:02:41 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ void	ft_putchar(char c)
 
 void	ft_putstr(char *str)
 {
-	char	i;
-
+	int	i;
+	
+	i = 0;
 	while (str [i])
 	{
 		ft_putchar(str[i]);
