@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 12:30:37 by oharoon           #+#    #+#             */
-/*   Updated: 2022/08/17 12:40:38 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/08/21 12:38:32 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_recursive_factorial(int nb)
 		return (1);
 	else if (nb > 0)
 	{
-		aux = nb * ft_recursive_factorial(nb -1);
+		aux = nb * ft_recursive_factorial(nb - 1);
 		nb--;			
 	}
 	return (aux);

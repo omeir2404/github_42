@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 11:18:47 by oharoon           #+#    #+#             */
-/*   Updated: 2022/08/13 18:02:43 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/08/20 15:42:38 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,14 @@ void	ft_putnbr(int nb)
 	}
 	else
 	{
-		if(nb != -2147483648)
+		if (nb != -2147483648)
 		{
 			ft_putchar(nb + 48);
-		}
-		
+		}	
 	}
 }
 
 int main(void)
 {
-	ft_putnbr(14648);
+	ft_putnbr(-2147483648);
 }

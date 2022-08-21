@@ -2,7 +2,6 @@ int ft_iterative_factorial(int nb)
 {
 	int aux;
 
-
 	aux = 1;
 
 	if (nb < 0)

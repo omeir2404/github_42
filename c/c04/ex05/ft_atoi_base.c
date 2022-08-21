@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <limits.h>
 
-int ft_atoi_base(char *str)
+int ft_atoi_base(char *str, base)
 {
 	int sign = 1, base = 0, i = 0;
 

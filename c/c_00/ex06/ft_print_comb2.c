@@ -5,63 +5,60 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/07 10:39:15 by oharoon           #+#    #+#             */
-/*   Updated: 2022/08/08 19:32:01 by oharoon          ###   ########.fr       */
+/*   Created: 2022/08/20 14:55:53 by oharoon           #+#    #+#             */
+/*   Updated: 2022/08/20 15:41:58 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char a, char b, char c, char d)
+void	putchar(char a, char b)
 {
 	write(1, &a, 1);
 	write(1, &b, 1);
-	write(1, " ", 1);
-	write(1, &c, 1);
-	write(1, &d, 1);
-	if (a != 57 || b != 56 || c != 57 || d != 57)
+}
+
+void	putint(int num, int max)
+{
+	char	u;
+	char	d;
+
+	if (num <= 9)
 	{
-		write(1, &", ", 2);
+		u = num + 48;
+		putchar('0', u);
+	}
+	else if (num <= max)
+	{
+		u = (num % 10) + 48;
+		d = (num / 10) + 48;
+		putchar(d, u);
 	}
 }
 
-void	whilez(char w, char x, char y, char z)
+void	catint(int fir, int sec)
 {
-	while (z < 58)
-	{
-		if (w + x < y + z)
-		{
-			ft_putchar(w, x, y, z);
-		}
-	z++;
-	}
+	putint(fir, 98);
+	write(1, " ", 1);
+	putint(sec, 99);
+	if (fir != 98 || sec != 99)
+		putchar(',', ' ');
 }
 
 void	ft_print_comb2(void)
 {
-	char	w;
-	char	x;
-	char	y;
-	char	z;
+	int	x;
+	int	y;
 
-	w = 48;
-	x = 48;
-	y = 48;
-	z = 49;
-	while (w < 58)
+	x = 0;
+	while (x <= 98)
 	{
-		while (x < 58)
+		y = x + 1;
+		while (y <= 99)
 		{
-			while (y < 58)
-			{
-				whilez(w, x, y, z);
-			z = 48;
+			catint(x, y);
 			y++;
-			}
-		y = 48;
-		x++;
 		}
-	x = 48;
-	w++;
+		x++;
 	}
 }

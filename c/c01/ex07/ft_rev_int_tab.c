@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 17:29:49 by oharoon           #+#    #+#             */
-/*   Updated: 2022/08/11 22:40:48 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/08/14 18:52:37 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_rev_int_tab(int *tab, int size)
 
 	first = 0;
 	size = size -1;
-	while (first <= size )
+	while (first <= size)
 	{
 		swap = tab[first];
 		tab[first] = tab[size];

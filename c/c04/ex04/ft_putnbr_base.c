@@ -1,23 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/20 14:26:16 by oharoon           #+#    #+#             */
+/*   Updated: 2022/08/20 18:41:46 by oharoon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include<unistd.h>
+
 int	ver_base(char *base)
 {
-	int i;
+	int	i;
+	int b;
 
 	i = 0;
-	if (base[i] == '-' || base[i] == '+' | base[i] == base[i +1])
-		return (0);
-	i++;
-	if (i <= 0)
+	while (base[i])
+	{
+		b = i + 1;
+		while(base[b])
+		{
+			if (base[i] == base[b])
+				return (0);
+			b++;
+		}
+		i++;
+	}
+	i = 0;
+	while(base[i])
+	{
+		if (base[i] == '-' || base[i] == '+')
+			return (0);	
+		i++;
+	}
+
+	if (i <= 1)
 		return (0);
 	return (1);
 }
 
 void	aux(int nbr, char *base, int size)
 {
-	unsigned int 	n;
-	char	c;
+	unsigned int	n;
+	char			c;
 
-	if(nbr< 0)
+	if (nbr < 0)
 	{
 		write(1, "-", 1);
 		n = -nbr;
@@ -32,12 +62,12 @@ void	aux(int nbr, char *base, int size)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int i;
+	long int	i;
 
 	i = 0;
 	if (ver_base(base) == 1)
 	{
-		while(base[i] != '\0')
+		while (base[i] != '\0')
 			i++;
 		aux(nbr, base, i);
 	}

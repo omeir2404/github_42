@@ -26,8 +26,8 @@ int		main(void)
 
 	src = "Hello World";
 	printf("base   : %s\n", src);
-	strncpy(dest, src, 8);
+	strncpy(dest, src, 2);
 	printf("cpy    : %s\n", dest);
-	ft_strncpy(dest, src, 8);
+	ft_strncpy(dest, src, 2);
 	printf("ft_cpy : %s\n", dest);
 }

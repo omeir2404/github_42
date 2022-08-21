@@ -1,6 +1,18 @@
 #include <unistd.h>
 #include<stdio.h>
 
+
+void    ft_putstr(char *str)
+{
+    int i;
+    i = 0;
+    while(str[i] != '\0')
+    {
+        write(1, &str[i], 1);
+        i++;
+    }
+}
+
 int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
@@ -19,9 +31,9 @@ int	ft_strcmp(char *s1, char *s2)
 }
 
 
-void	ft_swap(char *a, char *b)
+void	ft_swap(char **a, char **b)
 {
-	char	c;
+	char	*c;
 
 	c = *a;
 	*a = *b;
@@ -33,13 +45,23 @@ int main(int argc, char **argv)
 	int a;
 	int i;
 
-	a = 0;
-	i = a;
-	while(argv[a][i] != '\0')
+	a = 1;
+	while(a < argc -1)
 	{
-		if(ft_strcmp(argv[a], argv[i]) > 0) 
-			ft_swap(argv[a], argv[i]);
+		i = 0;
+		while(i < argc - 1)
+		{
+			if(ft_strcmp(argv[a], argv[a + 1]) > 0)
+				ft_swap(&argv[a], &argv[a + 1]);
+			i++;
+		}
+		a++;
+	}
+	i = 1;
+	while(i < argc)
+	{
+		ft_putstr(argv[i]);
+		write(1, "\n", 1);
 		i++;
 	}
-	return(0);
 }
