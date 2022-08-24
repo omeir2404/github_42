@@ -1,41 +1,56 @@
-int ft_is_divisable(int nb)
-{
-	int i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/21 14:53:32 by oharoon           #+#    #+#             */
+/*   Updated: 2022/08/21 17:33:32 by oharoon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	i = 2;
-	while (i <= nb/2)
+int	ft_is_prime(int nb)
+{
+	int	n;
+
+	n = 2;
+	if (nb < 2)
+		return (0);
+	while (n <= nb / 2)
 	{
-		if (nb % i == 0)
-			return(0);
-		i++;
+		if (nb % n == 0)
+			return (0);
+		n++;
 	}
 	return (1);
 }
 
-int	ft_is_prime(int nb)
+int	ft_find_next_prime(int nb)
 {
-	if (ft_is_divisable(nb) == 1 && nb != 1 && nb > 0)
-		return (1);
-	return (0);
+	while (nb < 2147483647 && !ft_is_prime(nb))
+		nb++;
+	return (nb);
 }
 
-int ft_find_next_prime(int nb)
-{
+#include <stdio.h>
 
-	while(ft_is_prime(nb) == 0)
-	{
-		if (ft_is_prime(nb) == 1)
-			return (nb);
-		else if (ft_is_prime(nb) != 1)
-			nb++;        
-	}
-	return(nb);
+int		ft_find_next_prime(int nb);
+
+int		main(void)
+{
+	printf("-10 = %d (2)\n", ft_find_next_prime(-10));
+	printf(" 0 = %d (2)\n", ft_find_next_prime(0));
+	printf(" 1 = %d (2)\n", ft_find_next_prime(1));
+	printf(" 2 = %d (2)\n", ft_find_next_prime(2));
+	printf(" 3 = %d (3)\n", ft_find_next_prime(3));
+	printf(" 4 = %d (5)\n", ft_find_next_prime(4));
+	printf(" 5 = %d (5)\n", ft_find_next_prime(5));
+	printf(" 6 = %d (7)\n", ft_find_next_prime(6));
+	printf(" 7 = %d (7)\n", ft_find_next_prime(7));
+	printf(" 8 = %d (11)\n", ft_find_next_prime(8));
+	printf(" 9 = %d (11)\n", ft_find_next_prime(9));
+	printf(" 10 = %d (11)\n", ft_find_next_prime(10));
+	printf(" 11 = %d (11)\n", ft_find_next_prime(11));
+	
 }
-
-/*#include<stdio.h>
-int main(void)
-{
-	int b;
-	b = ft_find_next_prime(7);
-	printf("%d", b);
-}*/
