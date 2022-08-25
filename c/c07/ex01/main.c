@@ -9,7 +9,7 @@ int main(void)
     int *point;
     int i = 0;
     point = ft_range(min,  max);
-    while(i < max - min)
+    while(i < max  - min)
     {
         printf("%d", point[i]); 
         i++;

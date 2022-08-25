@@ -7,6 +7,7 @@ int main(int argc, char **argv)
     int second;
     int result;
     char calc;
+
     result = 0;
     if (argc == 4)
     {

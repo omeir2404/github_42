@@ -1,38 +1,89 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/25 12:33:54 by oharoon           #+#    #+#             */
+/*   Updated: 2022/08/25 15:16:46 by oharoon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdio.h>
 #include <limits.h>
 
-int ft_atoi_base(char *str, base)
+int	ver_base(char *base)
 {
-	int sign = 1, base = 0, i = 0;
+	int	i;
+	int	b;
 
-	while (str[i] == ' ')
+	i = 0;
+	while (base[i])
 	{
+		b = i + 1;
+		while (base[b])
+		{
+			if (base[i] == base[b])
+				return (0);
+			b++;
+		}
 		i++;
 	}
-	if (str[i] == '-' || str[i] == '+')
+	i = 0;
+	while (base[i])
 	{
-		sign = 1 - 2 * (str[i++] == '-');
+		if (base[i] == '-' || base[i] == '+')
+			return (0);
+		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-
-		if (base > INT_MAX / 10
-			|| (base == INT_MAX / 10
-			&& str[i] - '0' > 7))
-		{
-			if (sign == 1)
-				return INT_MAX;
-			else
-				return INT_MIN;
-		}
-		base = 10 * base + (str[i++] - '0');
-	return base * sign;
+	if (i <= 1)
+		return (0);
+	return (1);
 }
 
-int main()
+int	len(char *str)
 {
-	char str[] = "  -123";
-	int val = ft_atoi_base(str);
-	printf("%d ", val);
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+int	ft_atoi_base(char *str, char *base)
+{
+	int	sign;
+	int	i;
+	int	num;
+	int	base_val;
+
+	i = 0;
+	sign = 1;
+	num = 0;
+	base_val = len(base);
+	if (ver_base(base))
+	{
+		while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+			i++;
+		if (str[i] == '-' || str[i] == '+')
+		{
+			if (str[i] == '-')
+				sign *= -1;
+			i++;
+		}
+		while (str[i] >= '0' && str[i] <= '9')
+			num = num * base_val + (str[i++] - '0');
+	}
+	return (num * sign);
+}
+
+int	main(void)
+{
+	char	str[] = "0101";
+	int	val = ft_atoi_base(str , "01");
+	printf("%d", val);
 	return 0;
 }
