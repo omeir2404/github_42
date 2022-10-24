@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int ft_strlen(char *str)
+size_t ft_strlen(const char *str)
 {
     int i;
 
@@ -13,6 +13,6 @@ int ft_strlen(char *str)
 int main(void)
 {
     char *a= "hello";
-    int i = ft_strlen(a);
+    size_t i = ft_strlen(a);
     printf("%d", i);
 }
