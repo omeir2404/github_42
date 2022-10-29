@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 11:14:15 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 11:14:35 by oharoon          ###   ########.fr       */
+/*   Created: 2022/10/29 11:44:34 by oharoon           #+#    #+#             */
+/*   Updated: 2022/10/29 11:48:48 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <string.h>
 
-int	ft_isalpha(char c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if ((c <= 90 && c >= 65) || (c <= 122 && c >= 97))
-		return (1);
-	else
+	size_t	c;
+
+	c = 0;
+	if (n == 0)
 		return (0);
+	while (c < n)
+	{
+		if (((unsigned char *)s1)[c] != ((unsigned char *)s2)[c])
+			return (((unsigned char *)s1)[c] - ((unsigned char *)s2)[c]);
+		c++;
+	}
+	return (0);
 }
-
-/*int main(void)
-{
-	char c = 'j';
-	int i = ft_isalpha(c);
-	printf("%d\n", i);
-	int b = ft_isalpha(c);
-	printf("%d", b);
-}*/

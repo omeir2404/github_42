@@ -1,30 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 11:14:15 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 11:14:35 by oharoon          ###   ########.fr       */
+/*   Created: 2022/10/29 12:12:40 by oharoon           #+#    #+#             */
+/*   Updated: 2022/10/29 12:14:59 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <stdio.h>
 
-int	ft_isalpha(char c)
+size_t	ft_strlen(const char *str)
 {
-	if ((c <= 90 && c >= 65) || (c <= 122 && c >= 97))
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strrchr(const char *s, int c)
+{
+	const char	*start;
+	int			len;
+
+	len = ft_strlen(s);
+	start = s;
+	s += len;
+	while (*s != *start && c != *s)
+		s--;
+	if (c == *s)
+		return ((char *)s);
+	return (0);
 }
 
 /*int main(void)
 {
-	char c = 'j';
-	int i = ft_isalpha(c);
-	printf("%d\n", i);
-	int b = ft_isalpha(c);
-	printf("%d", b);
+	const char str[] = "hello world\n";
+	printf("%s", ft_strrchr(str, 111));
+	printf("%s", strrchr(str, 111));
 }*/

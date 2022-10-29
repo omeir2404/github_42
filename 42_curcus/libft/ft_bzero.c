@@ -1,31 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/29 11:49:20 by oharoon           #+#    #+#             */
+/*   Updated: 2022/10/29 11:54:14 by oharoon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 #include<stdio.h>
 
-
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    if (n != 0)
-    {
-        while(i < n)
-        {
-            ((unsigned char *)s)[i] = 0;
-            i++;        
-        }
-
-    }
+	i = 0;
+	if (n != 0)
+	{
+		while (i < n)
+		{
+			((unsigned char *)s)[i] = 0;
+			i++;
+		}
+	}
 }
 
-int main(void)
+/*int main(void)
 {
-    char b[] = "hello";
-    void *mine = b;
-    //int m = 65;
-
-    ft_bzero(mine, 9);
-    printf("my return value: %s\n", mine);
-    bzero(mine, 9);
-    printf("their return value: %s\n", mine);
-}
+	char b[] = "hello";
+	void *mine = b;
+	int m = 65;
+	ft_bzero(mine, m);
+	printf("my return value: %p\n", mine);
+	bzero(mine, m);
+	printf("their return value: %p\n", mine);
+}*/

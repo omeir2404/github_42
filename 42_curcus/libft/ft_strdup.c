@@ -1,17 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 12:22:09 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 12:22:48 by oharoon          ###   ########.fr       */
+/*   Created: 2022/10/29 12:39:30 by oharoon           #+#    #+#             */
+/*   Updated: 2022/10/29 12:40:40 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<string.h>
+#include <string.h>
+#include <stdlib.h>
+
+size_t	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -28,19 +38,25 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-/*int main()
+char	*ft_strdup(const char *s)
 {
-char csrc[] = "GeeksforGeeks";
-char cdest[100];
-ft_memcpy(cdest, csrc, strlen(csrc)+1);
-printf("Copied string is %s", cdest);
- 
-int isrc[] = {10, 20, 30, 40, 50};
-int n = sizeof(isrc)/sizeof(isrc[0]);
-int idest[n], i;
-ft_memcpy(idest, isrc, sizeof(isrc));
-printf("\nCopied array is ");
-for (i=0; i<n; i++)
-	printf("%d ", idest[i]);
-return 0;
+	int		size;
+	char	*dupped;
+
+	size = ft_strlen(s);
+	dupped = (char *)malloc(size + 1);
+	if (!(dupped))
+		return (0);
+	ft_memcpy(dupped, s, size + 1);
+	return (dupped);
+}
+
+/*#include <stdio.h>
+int main(void)
+{
+	const char *s = "";
+	char *dupped = ft_strdup(s);
+	printf("mine: %s\n", dupped);
+	dupped = strdup(s);
+	printf("og: %s\n", dupped);
 }*/

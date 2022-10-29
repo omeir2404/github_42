@@ -1,27 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/29 11:36:31 by oharoon           #+#    #+#             */
+/*   Updated: 2022/10/29 11:44:23 by oharoon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include<stdio.h>
-#include<string.h>
+#include <string.h>
 
-void *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-    size_t size;
+	size_t	size;
 
-    size = 0;
-    while (size < len)
-    {
-        ((unsigned char *)b)[size] = c;
-        size++;
-    }
-    return (b);
+	size = 0;
+	while (size < len)
+	{
+		((unsigned char *)b)[size] = c;
+		size++;
+	}
+	return (b);
 }
+
+/*
 int main(void)
 {
-    char b[] = "hello";
-    void *mine = b;
-    int m = 65;
+	char b[] = "hello";
+	void *mine = b;
+	int m = 65;
 
-    ft_memset(mine, m, 2);
-    printf("my return value: %s\n", mine);
-    memset(mine, m, 2);
-    printf("their return value: %s\n", mine);
-}
+	printf("my return value: %p\n", ft_memset(mine, m, 2));
+	printf("their return value: %p\n", memset(mine, m, 2));
+}*/

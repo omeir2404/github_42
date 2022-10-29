@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 11:14:15 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 11:14:35 by oharoon          ###   ########.fr       */
+/*   Created: 2022/10/29 12:35:53 by oharoon           #+#    #+#             */
+/*   Updated: 2022/10/29 12:38:30 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
 
-int	ft_isalpha(char c)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	if ((c <= 90 && c >= 65) || (c <= 122 && c >= 97))
-		return (1);
-	else
-		return (0);
+	size_t	size;
+
+	size = 0;
+	while (size < len)
+	{
+		((unsigned char *)b)[size] = c;
+		size++;
+	}
+	return (b);
 }
 
-/*int main(void)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char c = 'j';
-	int i = ft_isalpha(c);
-	printf("%d\n", i);
-	int b = ft_isalpha(c);
-	printf("%d", b);
-}*/
+	size_t	total;
+	void	*dest;
+
+	total = nmemb * size;
+	dest = malloc(total);
+	if (!(dest))
+		return (0);
+	ft_memset(dest, 0, total);
+	return (dest);
+}

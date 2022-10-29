@@ -1,16 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/29 12:23:06 by oharoon           #+#    #+#             */
+/*   Updated: 2022/10/29 12:29:46 by oharoon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <string.h>
-void	*ft_memmove(void *dst, const void *src, unsigned int len)
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-    unsigned int i;
+	size_t	i;
 
 	if (!dst && !src)
 		return (0);
 	i = 0;
-	if ((unsigned int)dst - (unsigned int)src < len)
+	if ((size_t)dst - (size_t)src < len)
 	{
 		i = len - 1;
-		while (i >= 0 && i < len)
+		while (i < len)
 		{
 			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
 			i--;
@@ -27,10 +40,14 @@ void	*ft_memmove(void *dst, const void *src, unsigned int len)
 	return (dst);
 }
 
-int main()
+/*int main()
 {
 char csrc[100] = "Geeksfor";
 ft_memmove(csrc+5, csrc, strlen(csrc)+1);
+printf("%s\n", csrc);
+
+char csrcog[100] = "Geeksfor";
+ft_memmove(csrcog+5, csrcog, strlen(csrcog)+1);
 printf("%s", csrc);
 return 0;
-}
+}*/

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 11:14:15 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 11:14:35 by oharoon          ###   ########.fr       */
+/*   Created: 2022/10/29 20:04:16 by oharoon           #+#    #+#             */
+/*   Updated: 2022/10/29 21:56:26 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_isalpha(char c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	if ((c <= 90 && c >= 65) || (c <= 122 && c >= 97))
-		return (1);
-	else
+	char	*new_str;
+	size_t	i;
+	size_t	j;
+
+	new_str = (char *)malloc(len + 1);
+	if (!s || !(new_str))
 		return (0);
+	i = start;
+	j = 0;
+	while (i < ft_strlen(s) && j < len)
+		new_str[j++] = s[i++];
+	new_str[j] = '\0';
+	return (new_str);
 }
-
-/*int main(void)
-{
-	char c = 'j';
-	int i = ft_isalpha(c);
-	printf("%d\n", i);
-	int b = ft_isalpha(c);
-	printf("%d", b);
-}*/

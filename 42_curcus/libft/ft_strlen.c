@@ -1,18 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/29 11:29:33 by oharoon           #+#    #+#             */
+/*   Updated: 2022/10/29 11:29:44 by oharoon          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(str[i])
-        i++;
-    return (i);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
+/*
+#include<string.h>
 int main(void)
 {
-    char *a= "hello";
-    size_t i = ft_strlen(a);
-    printf("%d", i);
-}
+	char *a= "o";
+	size_t i = ft_strlen(a);
+	printf("%ld\n", i);
+	size_t b = strlen(a);
+	printf("%ld", b);
+}*/
