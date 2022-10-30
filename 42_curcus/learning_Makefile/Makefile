@@ -11,7 +11,7 @@ say_hello:
 
 generate:
 	@echo "creating empty text files..."
-	touch file-{1..1000}.txt
+	touch file-{1..10}.txt
 
 clean:
 	@echo "cleaning up..."
