@@ -1,3 +1,7 @@
+NAME = libft.a
+
+
+
 .PHONY: all say_hello generate clean
 
 all: say_hello generate
@@ -16,3 +20,9 @@ clean:
 
 hello: hello.c
 	gcc hello.c -o hi
+
+
+TEXT = "42 is awesome"
+
+rule_a:
+	@echo $(TEXT)
