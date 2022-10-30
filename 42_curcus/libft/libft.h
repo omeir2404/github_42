@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:31:36 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 20:59:49 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/10/30 15:55:51 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ void			*ft_calloc(size_t count, size_t size);
 
 //Additional functions
 char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strtrim(char const *s1, char const *set);
 
 #endif
