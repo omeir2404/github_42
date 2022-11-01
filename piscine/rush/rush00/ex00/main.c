@@ -16,6 +16,6 @@ void	ft_putchar(char c);
 
 int	main(void)
 {
-	rush(8, 11);
+	rush(5, 15);
 	return (0);
 }
