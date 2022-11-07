@@ -6,7 +6,7 @@
 #    By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 14:58:19 by oharoon           #+#    #+#              #
-#    Updated: 2022/10/29 16:37:22 by oharoon          ###   ########.fr        #
+#    Updated: 2022/11/01 13:15:56 by oharoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,11 @@ SRCS = ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 OBJS	= $(SRCS:.c=.o)
 
 all: $(NAME)
+
+run: $(NAME)
+
+	$(CC) $(CFLAGS) $(NAME) -o main
+	./main
 
 $(NAME):	$(OBJS)
 			ar -rcs $(NAME) $(OBJS)

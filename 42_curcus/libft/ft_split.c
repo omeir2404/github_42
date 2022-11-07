@@ -6,40 +6,80 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:48:03 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/30 17:24:25 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/07 17:46:18 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-int char_count(const char *s, char c)
+int	word_count(char const *s, char c)
 {
-    int equal;
-    int stop;
+	int	word;
+	int	is_c;
 
-    stop = 0;
-    equal = 0;
-    while (s[stop])
-    {  
-       if (s[stop] != c)
-            equal++;
-        stop++; 
-    }
-    return (equal);
+	word = 0;
+	is_c = 0;
+	while (*s)
+	{
+		if (*s != c && is_c == 0)
+		{
+			is_c = 1;
+			word++;
+		}
+		else if (*s == c)
+			is_c = 0;
+		s++;
+	}
+	return (word);
+}
+
+/*
+" gfdg gf"
+*/
+char	*create_str(char *str, int i, char **lst, char c)
+{
+	int		count;
+	char	*s;
+
+	count = 0;
+	while (*str == c && *str)
+		str++;
+	while (str[count] && str[count] != c)
+		count++;
+	s = malloc (sizeof(char ) * (count + 1));
+	ft_strlcpy(s, str, count + 1);
+	lst[i] = s;
+	return (str + count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-    
-	return (0);
+	char	**array;
+	int		index;
+	int		size;
+	char	*temp;
+
+	index = -1;
+	size = word_count(s, c);
+	array = malloc(sizeof(char *) * (size + 1));
+	if (!s || !array)
+		return (0);
+	temp = (char *)s;
+	while (++index < size)
+		temp = create_str(temp, index, array, c);
+	array[size] = NULL;
+	return (array);
 }
 
-#include <stdio.h>
-int main(void)
+/*int	main(void)
 {
-    char const *s = "jorge e corajoso";
-    char c = ' ';
-    //ft_split(s, c);
-    printf("%i", char_count(s, c));
-}
+	char const	*s = "";
+	char		c = ' ';
+	int i = -1;
+
+	char **split = ft_split(s, c);
+	printf("%i\n", word_count(s, c));
+	while (split[++i] != NULL)
+		printf("%s\n", split[i]);
+	printf("n: %s\n", split[i]);	
+}*/

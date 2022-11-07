@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:31:36 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/30 15:55:51 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/07 17:53:12 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <stdio.h>
 
 // Mandatory functions
 int				ft_isascii(int c);
@@ -48,5 +49,7 @@ void			*ft_calloc(size_t count, size_t size);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
+char			**ft_split(char const *s, char c);
+char			*ft_itoa(int n);
 
 #endif
