@@ -6,11 +6,11 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:44:34 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 11:48:48 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/07 21:11:41 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

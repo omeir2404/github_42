@@ -6,12 +6,11 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:18:49 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 11:24:50 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/07 21:11:53 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

@@ -6,12 +6,11 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:22:09 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 12:22:48 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/07 21:10:47 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

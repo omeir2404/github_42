@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:31:36 by oharoon           #+#    #+#             */
-/*   Updated: 2022/11/07 20:53:05 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/10 19:36:45 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdlib.h>
 # include <string.h>
 # include <stdio.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 // Mandatory functions
 int				ft_isascii(int c);
@@ -57,5 +63,8 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+
+//BONUS FUNCTIONS
+t_list			*ft_lstnew(void *content);
 
 #endif

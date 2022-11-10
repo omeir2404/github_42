@@ -6,11 +6,11 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:40:54 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 19:38:33 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/07 21:12:56 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

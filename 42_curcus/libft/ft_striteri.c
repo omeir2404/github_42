@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:30:50 by oharoon           #+#    #+#             */
-/*   Updated: 2022/11/07 18:52:58 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/10 16:06:37 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	unsigned int	i;
+	size_t	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
 	while (s[i])
 	{

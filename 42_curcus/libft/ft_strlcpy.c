@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:56:03 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 20:36:34 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/10 19:59:10 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	srcsize;
 	size_t	i;
 
 	if (!dst || !src)
 		return (0);
-	srcsize = ft_strlen(src);
 	i = 0;
 	if (dstsize != 0)
 	{
@@ -30,7 +28,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		dst[i] = '\0';
 	}
-	return (srcsize);
+	while (src[i])
+		i++;
+	return (i);
 }
 
 /*

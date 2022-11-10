@@ -6,12 +6,11 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 11:49:20 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 11:54:14 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/07 21:12:00 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include<stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
