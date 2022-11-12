@@ -6,7 +6,7 @@
 #    By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 14:58:19 by oharoon           #+#    #+#              #
-#    Updated: 2022/11/10 19:41:29 by oharoon          ###   ########.fr        #
+#    Updated: 2022/11/12 13:29:53 by oharoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,10 @@ SRCS = ft_isascii.c ft_isprint.c ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 
 OBJS	= $(SRCS:.c=.o)
 
-BONUS			=	ft_lstnew.c
-
+BONUS			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+						ft_lstlast.c ft_lstadd_back.c \
+						ft_lstdelone.c ft_lstclear.c \
+						ft_lstiter.c ft_lstmap.c
 BONUS_OBJS		= $(BONUS:.c=.o)
 
 all: $(NAME)
@@ -43,11 +45,11 @@ run: $(NAME)
 	$(CC) $(CFLAGS) $(NAME) -o main
 	./main
 
-$(NAME):	$(OBJS)
-			ar -rcs $(NAME) $(OBJS)
+$(NAME):	$(OBJS) $(BONUS_OBJS)
+			ar -rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
