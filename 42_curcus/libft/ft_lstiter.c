@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 11:15:06 by oharoon           #+#    #+#             */
-/*   Updated: 2022/11/07 21:12:13 by oharoon          ###   ########.fr       */
+/*   Created: 2022/11/12 13:13:38 by oharoon           #+#    #+#             */
+/*   Updated: 2022/11/12 13:18:17 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (c <= 57 && c >= 48)
-		return (1);
-	else
-		return (0);
+	while (lst)
+	{
+		f (lst->content);
+		lst = lst->next;
+	}
 }
-
-/*
-int main(void)
-{
-	int i = ft_isdigit('9');
-	printf("%d\n", i);
-	int y = isdigit('9');
-	printf("%d", y);
-}*/

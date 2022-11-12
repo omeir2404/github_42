@@ -6,11 +6,11 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:17:26 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 16:38:11 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/07 21:11:44 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 11:15:06 by oharoon           #+#    #+#             */
-/*   Updated: 2022/11/07 21:12:13 by oharoon          ###   ########.fr       */
+/*   Created: 2022/11/12 12:19:34 by oharoon           #+#    #+#             */
+/*   Updated: 2022/11/12 12:27:06 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_lstsize(t_list *lst)
 {
-	if (c <= 57 && c >= 48)
-		return (1);
-	else
-		return (0);
-}
+	int	i;
 
-/*
-int main(void)
-{
-	int i = ft_isdigit('9');
-	printf("%d\n", i);
-	int y = isdigit('9');
-	printf("%d", y);
-}*/
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}

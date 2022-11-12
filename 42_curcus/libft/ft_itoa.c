@@ -6,13 +6,53 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 15:38:49 by oharoon           #+#    #+#             */
-/*   Updated: 2022/11/07 17:52:08 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/12 15:38:17 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	count_digits(int n)
+{
+	size_t	i;
+
+	i = 0;
+	while (n)
+	{
+		i++;
+		n = n / 10;
+	}
+	return (i);
+}
+//por o barra zero linha 44. linha 52, inicio da str
+
 char	*ft_itoa(int n)
+{
+	char	*str_num;
+	size_t	digits;
+	size_t	num;
+
+	num = n;
+	digits = count_digits(n);
+	if (n <= 0)
+	{
+		num *= -1;
+		digits++;
+	}
+	str_num = malloc(digits + 1);
+	if (!str_num)
+		return (0);
+	*(str_num + digits) = 0;
+	while (digits--)
+	{
+		*(str_num + digits) = num % 10 + '0';
+		num = num / 10;
+	}
+	if (n < 0)
+		*str_num = '-';
+	return (str_num);
+}
+/*char	*ft_itoa(int n)
 {
 	char	*str;
 
@@ -35,8 +75,8 @@ char	*ft_itoa(int n)
 		str[1] = '\0';
 	}
 	return (str);
-}
-
+}*/
+//
 /*int	main(void)
 {
 	int i = 0;

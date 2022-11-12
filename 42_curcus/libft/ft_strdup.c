@@ -6,37 +6,11 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:39:30 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 12:40:40 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/07 21:09:30 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	size_t	i;
-
-	if (!dst && !src)
-		return (0);
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-		i++;
-	}
-	return (dst);
-}
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {

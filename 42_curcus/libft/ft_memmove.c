@@ -6,12 +6,11 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:23:06 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 12:29:46 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/07 21:11:29 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

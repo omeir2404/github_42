@@ -6,11 +6,11 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:34:15 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 19:52:56 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/07 21:11:56 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

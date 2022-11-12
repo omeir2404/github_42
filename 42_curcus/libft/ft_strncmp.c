@@ -6,11 +6,13 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:15:14 by oharoon           #+#    #+#             */
-/*   Updated: 2022/10/29 12:17:10 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/07 21:15:57 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;
 	int				diff;
