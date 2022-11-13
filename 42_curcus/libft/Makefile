@@ -6,12 +6,12 @@
 #    By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 14:58:19 by oharoon           #+#    #+#              #
-#    Updated: 2022/11/12 13:29:53 by oharoon          ###   ########.fr        #
+#    Updated: 2022/11/13 11:31:56 by oharoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-CC		= gcc
+CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= /bin/rm -f
 
@@ -45,8 +45,8 @@ run: $(NAME)
 	$(CC) $(CFLAGS) $(NAME) -o main
 	./main
 
-$(NAME):	$(OBJS) $(BONUS_OBJS)
-			ar -rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+$(NAME):	$(OBJS)
+			ar -rcs $(NAME) $(OBJS)
 
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS)

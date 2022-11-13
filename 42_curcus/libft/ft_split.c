@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 16:48:03 by oharoon           #+#    #+#             */
-/*   Updated: 2022/11/07 17:46:18 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/13 11:46:43 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ char	*create_str(char *str, int i, char **lst, char c)
 	while (str[count] && str[count] != c)
 		count++;
 	s = malloc (sizeof(char ) * (count + 1));
+	if (!s)
+		return (NULL);
 	ft_strlcpy(s, str, count + 1);
 	lst[i] = s;
 	return (str + count);
