@@ -1,47 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 12:34:15 by oharoon           #+#    #+#             */
-/*   Updated: 2022/11/13 19:14:45 by oharoon          ###   ########.fr       */
+/*   Created: 2022/10/30 14:35:11 by oharoon           #+#    #+#             */
+/*   Updated: 2022/10/30 15:12:46 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	sign;
-	int	result;
+	char	*new_string;
+	int		count1;
+	int		count2;
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-')
+	count1 = 0;
+	count2 = 0;
+	new_string = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!new_string)
+		return (0);
+	while (s1[count1])
 	{
-		sign *= -1;
-		i++;
+		new_string[count1] = s1[count1];
+		count1++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (s2[count2])
 	{
-		result = result * 10 + str[i] - '0';
-		i++;
+		new_string[count1] = s2[count2];
+		count1++;
+		count2++;
 	}
-	return (result * sign);
+	new_string[count1] = '\0';
+	return (new_string);
 }
-
-/*int main(void)
-{
-	char a[]="1246";
-	int i;
-	i = ft_atoi(a);
-	printf("%d", i);
-}*/
