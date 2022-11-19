@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 18:36:05 by oharoon           #+#    #+#             */
-/*   Updated: 2022/11/18 11:08:38 by oharoon          ###   ########.fr       */
+/*   Created: 2022/11/18 09:10:55 by oharoon           #+#    #+#             */
+/*   Updated: 2022/11/19 05:34:00 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	ft_printf(const char *format, ...)
-{
-	int		count;
-	int		size;
-	va_list	tab;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 2
+# endif
 
-	va_start(tab, format);
-	count = -1;
-	size = 0;
-	while (format[++count])
-	{
-		if (format[count] == '%')
-		{
-			size += string_handle(format[++count], &tab);
-		}
-		else
-			size += write(1, &format[count], 1);
-	}
-	va_end(tab);
-	return (size);
-}
+# include <fcntl.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <sys/stat.h>
+# include <sys/types.h>
+# include <unistd.h>
+
+char	*get_next_line(int fd);
+int		ft_strlen(char *str);
+char	*make_line(char *line, char *buff);
+int		ft_check_next_line(char *str);
+
+#endif
