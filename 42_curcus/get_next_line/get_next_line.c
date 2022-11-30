@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:17:55 by oharoon           #+#    #+#             */
-/*   Updated: 2022/11/19 05:05:43 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/30 18:52:50 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,13 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-/* int main()
+int main()
 {
-	int fd;
-	char *str;
-
-	fd = open("test.txt", O_RDONLY);
-	while(str == get_next_line(fd))
-	{
-		printf("%s", str);
-		free(str);
-	}
-	close(fd);
-} */
+	int fd = open("test.txt", O_RDONLY);;
+	char *str = get_next_line(fd);
+	printf("%s\n", str);
+	free(str);
+	return (0);
+}
 /* has to search for \n in "line", {LINE 32}
 	breaks if it finds "\n", else return(1) */
