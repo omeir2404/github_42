@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 03:09:55 by oharoon           #+#    #+#             */
-/*   Updated: 2022/11/19 05:24:28 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/21 12:20:17 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	char	*new_string;
 
-	new_string = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	new_string = malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
 	if (!new_string)
 		return (NULL);
 	str = new_string;

@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 03:09:28 by oharoon           #+#    #+#             */
-/*   Updated: 2022/11/19 05:34:14 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/21 12:06:19 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ char	*get_next_line(int fd);
 int		ft_strlen(char *str);
 char	*make_line(char *line, char *buff);
 int		ft_check_next_line(char *str);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
