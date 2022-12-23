@@ -3,21 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: omeir <omeir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:31:36 by oharoon           #+#    #+#             */
-/*   Updated: 2022/11/12 13:30:36 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/11/13 15:36:06 by omeir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-typedef int	s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
 
 # include <unistd.h>
 # include <stdlib.h>
