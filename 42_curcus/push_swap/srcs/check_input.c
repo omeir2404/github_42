@@ -3,16 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   check_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: omeir <omeir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 14:53:08 by oharoon           #+#    #+#             */
-/*   Updated: 2022/12/28 14:56:25 by oharoon          ###   ########.fr       */
+/*   Updated: 2023/01/05 17:48:51 by omeir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void add_to_a(t_stack *a, char **av)
+void	add_to_a(t_list **a, char **av)
 {
-	
+	char	*s;
+	int		count;
+
+	count = 0;
+	while (s[count])
+	{
+		ft_lstadd_front(a, );
+	}
 }

@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
+/*   By: omeir <omeir@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:56:45 by oharoon           #+#    #+#             */
-/*   Updated: 2022/12/28 13:48:41 by oharoon          ###   ########.fr       */
+/*   Updated: 2022/12/31 15:15:11 by omeir            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdio.h>
+# include <limits.h>
+# include "../libft/libft.h"
 
 typedef struct s_stack
 {
