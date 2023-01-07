@@ -6,7 +6,7 @@
 #    By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 14:58:19 by oharoon           #+#    #+#              #
-#    Updated: 2022/12/27 15:41:06 by oharoon          ###   ########.fr        #
+#    Updated: 2023/01/07 14:27:57 by oharoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ OBJS	= $(SRCS:.c=.o)
 BONUS			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 						ft_lstlast.c ft_lstadd_back.c \
 						ft_lstdelone.c ft_lstclear.c \
-						ft_lstiter.c ft_lstmap.c
+						ft_lstiter.c ft_lstmap.c \
+						lstnew_ps.c
 BONUS_OBJS		= $(BONUS:.c=.o)
 
 all: $(NAME)

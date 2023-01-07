@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   lstnew_ps.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/27 14:56:45 by oharoon           #+#    #+#             */
-/*   Updated: 2023/01/07 14:28:33 by oharoon          ###   ########.fr       */
+/*   Created: 2023/01/07 12:58:29 by oharoon           #+#    #+#             */
+/*   Updated: 2023/01/07 14:19:18 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <stdio.h>
-# include <limits.h>
-# include "libft/libft.h"
+#include "libft.h"
 
-typedef struct s_stack
+t_list	*lstnew_ps(int value)
 {
-	t_list	*a;
-	t_list	*b;
-}	t_stack;
-int		check_input(void);
-t_list	*add_to_a(char *num);
+	t_list	*newnode;
 
-#endif
+	newnode = malloc(sizeof(t_list) * 1);
+	if (!newnode)
+		return (NULL);
+	newnode->value = value;
+	newnode->next = NULL;
+	return (newnode);
+}

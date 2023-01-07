@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omeir <omeir@student.42.fr>                +#+  +:+       +#+        */
+/*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:31:36 by oharoon           #+#    #+#             */
-/*   Updated: 2023/01/05 17:31:13 by omeir            ###   ########.fr       */
+/*   Updated: 2023/01/07 14:21:16 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_list
 {
 	void			*content;
+	int				value;
 	struct s_list	*next;
 }					t_list;
 
@@ -85,4 +86,7 @@ int				ft_putstr(char *str);
 int				converter(double nbr, char *base, double size);
 int				converter_ptr(unsigned long nbr, char *base,
 					unsigned long size);
+
+// for push_swap
+t_list			*lstnew_ps(int value);
 #endif

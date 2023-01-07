@@ -1,5 +1,5 @@
 NAME = push_swap
-SOURCES = push_swap.c \
+SOURCES = push_swap.c srcs/*.c
 
 OBJECTS	=	$(SOURCES:.c=.o)
 CC	=	gcc
@@ -10,7 +10,7 @@ LIBFT = ./libft/libft.a
 all:		$(NAME)
 
 $(NAME):	$(LIBFT) $(OBJECTS)
-			$(CC) $(OBJECTS) -Llibft -o $(NAME)
+			$(CC) $(OBJECTS) libft/libft.a -o $(NAME)
 
 clean:		
 			rm -f $(OBJECTS)
