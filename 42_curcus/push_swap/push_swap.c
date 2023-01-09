@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 12:48:49 by oharoon           #+#    #+#             */
-/*   Updated: 2023/01/09 19:59:59 by oharoon          ###   ########.fr       */
+/*   Updated: 2023/01/09 20:20:22 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 	count_args = 1;
 	stack.a = NULL;
 	stack.b = NULL;
-	if (ac == 1)
+	if (ac < 3)
 		exit(0);
 	count_args = 1;
 	check_input(ac, av);

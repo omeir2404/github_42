@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 14:53:08 by oharoon           #+#    #+#             */
-/*   Updated: 2023/01/09 20:00:44 by oharoon          ###   ########.fr       */
+/*   Updated: 2023/01/09 20:28:01 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	dupicates(int ac, char **arg)
 	int	count;
 	int	self;
 
-	count = 1;
+	count = 2;
 	self = 1;
 	while (self < ac)
 	{
@@ -88,9 +88,20 @@ int	dupicates(int ac, char **arg)
 	return (1);
 }
 
+int	check_alpha(int ac, char **arg)
+{
+	int	i;
+
+	i = 0;
+	while (i < ac)
+}
+
 int	check_input(int ac, char **arg)
 {
 	not_int(arg);
 	dupicates(ac, arg);
+	check_alpha(ac, arg);
+	check_multiple_sign
+	
 	return (1);
 }
