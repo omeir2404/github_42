@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 12:31:36 by oharoon           #+#    #+#             */
-/*   Updated: 2023/01/07 13:21:24 by oharoon          ###   ########.fr       */
+/*   Updated: 2023/01/09 18:11:17 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <stdio.h>
+# include <limits.h>
 
 typedef struct s_list
 {

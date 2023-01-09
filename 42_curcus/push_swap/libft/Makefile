@@ -6,7 +6,7 @@
 #    By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/29 14:58:19 by oharoon           #+#    #+#              #
-#    Updated: 2023/01/07 13:05:57 by oharoon          ###   ########.fr        #
+#    Updated: 2023/01/09 17:22:48 by oharoon          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ BONUS			=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 						ft_lstlast.c ft_lstadd_back.c \
 						ft_lstdelone.c ft_lstclear.c \
 						ft_lstiter.c ft_lstmap.c \
-						lstnew_ps.c
+						lstnew_ps.c \
+						ft_printf.c ft_printf_utils.c
 BONUS_OBJS		= $(BONUS:.c=.o)
 
 all: $(NAME)

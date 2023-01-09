@@ -1,0 +1,3 @@
+1.ask how to fix the no space error when printing the stack
+
+2. ask if theres an easier way of checking if the args surpass the int limits

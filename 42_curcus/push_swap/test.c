@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/27 14:56:45 by oharoon           #+#    #+#             */
-/*   Updated: 2023/01/09 19:54:41 by oharoon          ###   ########.fr       */
+/*   Created: 2023/01/09 18:19:16 by oharoon           #+#    #+#             */
+/*   Updated: 2023/01/09 18:21:06 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include <stdio.h>
-# include <limits.h>
-# include "libft/libft.h"
+#include <stdio.h>
 
-typedef struct s_stack
+int	main(void)
 {
-	t_list	*a;
-	t_list	*b;
-}	t_stack;
-int		check_input(int ac, char **arg);
-t_list	*add_to_a(char *num);
-int		ft_atoi_ps(const char *str);
-int		dupicates(int ac, char **arg);
-
-#endif
+	printf("%d", atoi("0"));
+}
