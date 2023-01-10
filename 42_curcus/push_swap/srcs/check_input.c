@@ -6,7 +6,7 @@
 /*   By: oharoon <oharoon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 14:53:08 by oharoon           #+#    #+#             */
-/*   Updated: 2023/01/09 20:28:01 by oharoon          ###   ########.fr       */
+/*   Updated: 2023/01/10 18:45:12 by oharoon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ int	not_int(char **arg)
 		if (!ft_atoi(arg[i]))
 		{
 			ft_printf("Error\n");
+			ft_printf("atoi error");
 			exit(0);
 		}
 		if (ft_atoi(arg[i]) == -1)
@@ -58,6 +59,7 @@ int	not_int(char **arg)
 		else if (ft_atoi_ps(arg[i]) == -1)
 		{
 			ft_printf("Error\n");
+			ft_printf("not int error");
 			exit(0);
 		}
 		i++;
@@ -79,6 +81,7 @@ int	dupicates(int ac, char **arg)
 			if (ft_atoi(arg[self]) == ft_atoi(arg[count]))
 			{
 				ft_printf("Error\n");
+				ft_printf("found Duplicates");
 				exit(0);
 			}
 			count++;
@@ -91,17 +94,33 @@ int	dupicates(int ac, char **arg)
 int	check_alpha(int ac, char **arg)
 {
 	int	i;
+	int	digit;
 
-	i = 0;
+	i = 1;
 	while (i < ac)
+	{
+		digit = 0;
+		if (arg[i][0] == '+' || arg[i][0] == '-')
+			digit++;
+		while (arg[i][digit])
+		{
+			if (!(arg[i][digit] > 47 && arg[i][digit] < 58))
+			{
+				ft_printf("Error\n");
+				ft_printf("found Alphabet");
+				exit(0);
+			}
+			digit++;
+		}
+		i++;
+	}
+	return (1);
 }
 
 int	check_input(int ac, char **arg)
 {
+	check_alpha(ac, arg);
 	not_int(arg);
 	dupicates(ac, arg);
-	check_alpha(ac, arg);
-	check_multiple_sign
-	
 	return (1);
 }
